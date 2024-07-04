@@ -1,0 +1,75 @@
+/*
+import { Client } from 'node-mailjet';
+import { MailProvider } from '../../domain/Mail.provider';
+import { Mail } from '../../domain/Mail.entity';
+
+interface responseMail {
+  status_code: number;
+  message: string;
+  data: Object;
+}
+
+export class MailjetAdapter implements MailProvider {
+  private client: Client;
+
+  constructor(apiKey: string, apiSecret: string) {
+    this.client = new Client({
+      apiKey,
+      apiSecret,
+    });
+  }
+
+  async sendMail(mail: Mail): Promise<responseMail> {
+
+    const response: responseMail = {status_code: 500, message: '', data: {}}
+
+    return new Promise(async (resolve, reject)=>{
+      try { 
+
+        //Variables to HtmlPart
+        if (!mail.Variables || Object.keys(mail.Variables).length === 0) {
+          mail.HtmlPart = mail.HtmlPart.replace(/{{(\w+):'(.*?)'}}/g, (match, p1, p2) => p2);
+        }else{
+           mail.HtmlPart = mail.HtmlPart.replace(/{{(\w+):'(.*?)'}}/g, (match, p1, p2) => {
+            return mail.Variables.hasOwnProperty(p1) ? mail.Variables[p1] : p2;
+          });
+        }
+        const payload = {
+          Messages: [
+            {
+              From: mail.From,
+              To: mail.To,
+              Cc: mail.Cc,
+              Bcc: mail.Bcc,
+              Subject: mail.Subject,
+              HTMLPart: mail.HtmlPart,
+              TextPart: mail.TextPart,
+              TemplateID: mail.TemplateID,
+              TemplateLanguage: mail.TemplateLanguage,
+              TemplateErrorReporting: mail.TemplateErrorReporting,
+              Variables: mail.Variables,
+              Attachments: mail.Attachments,
+            },
+          ],
+        };
+
+        if(mail.TemplateLanguage == false)
+          payload.Messages[0].TemplateErrorReporting = null
+
+        const result = await this.client.post("send", { version: 'v3.1' }).request(payload);
+        response.status_code = 200
+        response.message = 'success'
+        response.data = result.body  
+        resolve(response)
+
+      } catch (err) {
+        response.status_code = err.statusCode || 500; 
+        response.message = err.message.replace(/\\/g, '').replace(/\n/g, ' ').replace(/\"/g, "'") || 'Generic error';
+        response.data = {mail}
+        reject(response)
+        
+      }
+    })
+  }
+}
+  */

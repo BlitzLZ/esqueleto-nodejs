@@ -1,0 +1,14 @@
+/*
+import { MailProvider } from '../domain/Mail.provider';
+import { Mail } from '../domain/Mail.entity';
+
+export class SendMail {
+  constructor(
+    private readonly mailProvider: MailProvider,
+  ) {}
+
+  async execute(mail: Mail): Promise<Object> {
+    return this.mailProvider.sendMail(mail);
+  }
+}
+*/

@@ -1,0 +1,58 @@
+/*
+import { Attachment } from "./Attachment.entity";
+
+
+export interface IRecipient {
+  Email: string;
+  Name: string;
+}
+
+export interface IVariables {
+  [key: string]: string;
+}
+
+export interface IMail {
+  From: IRecipient;
+  To: IRecipient[];
+  Bcc: IRecipient[];
+  Cc: IRecipient[];
+  Subject: string;
+  HtmlPart: string;
+  TextPart: string;
+  TemplateID: number;
+  Variables: IVariables[];
+  Attachments: Attachment[];
+  TemplateLanguage: boolean;
+  TemplateErrorReporting: IRecipient;
+}
+
+export class Mail implements IMail {
+  From: IRecipient;
+  To: IRecipient[]; 
+  Bcc: IRecipient[];
+  Cc: IRecipient[];
+  Subject: string;
+  HtmlPart: string;
+  TextPart: string;
+  TemplateID: number;
+  Variables: IVariables[];
+  Attachments: Attachment[];
+  TemplateLanguage: boolean;
+  TemplateErrorReporting: IRecipient;
+
+  constructor(mail: IMail) {
+    this.From = mail.From;
+    this.To = mail.To;
+    this.Bcc = mail.Bcc;
+    this.Cc = mail.Cc;
+    this.Subject = mail.Subject;
+    this.HtmlPart = mail.HtmlPart;
+    this.TextPart = mail.TextPart;
+    this.Attachments = mail.Attachments;
+    this.TemplateID = mail.TemplateID;
+    this.Variables = mail.Variables;
+    this.TemplateLanguage = mail.TemplateLanguage;
+    this.TemplateErrorReporting = mail.TemplateErrorReporting;
+  }
+}
+*/

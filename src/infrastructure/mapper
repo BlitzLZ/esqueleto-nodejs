@@ -1,0 +1,25 @@
+/*
+import { Mail } from "../domain/Mail.entity";
+
+export class MailMapper {
+
+     toDomainEntity(req): Mail {
+        if (!req) return null
+
+        return new Mail({
+            From: {Email: req.From.Email, Name: req.From.Name},
+            To: req.To.map(item => ({Email: item.Email, Name: item.Name})) ,
+            Bcc: req.Bcc ? req.Bcc.map(item => ({Email: item.Email, Name: item.Name})): null,
+            Cc: req.Cc ? req.Cc.map(item => ({Email: item.Email, Name: item.Name})) : null,
+            Subject: req.Subject ?? null,
+            HtmlPart: req.HTMLPart ?? null,
+            TextPart: req.TextPart ?? null,
+            TemplateID: req.TemplateID ?? null,
+            Variables: req.Variables ?? null,
+            Attachments: req.Attachments ? req.Attachments.map(item => ({ContentType:item.ContentType,Filename:item.Filename,Base64Content:item.Content})) : null,
+            TemplateLanguage: req.TemplateLanguage ?? false,
+            TemplateErrorReporting: req.TemplateErrorReporting ?? null
+        })
+    }
+}
+*/

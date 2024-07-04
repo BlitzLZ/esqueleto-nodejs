@@ -1,0 +1,9 @@
+version: '3'
+services:
+  nodejs:
+    environment:
+      PORT: 3001
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: 'host'
